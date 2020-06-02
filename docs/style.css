@@ -1,0 +1,37 @@
+body {
+    background-color: white;
+    color: #444;
+    font-family: sans-serif;
+}
+
+h1, h2, h3 {
+    color: #069;
+}
+
+h3 {
+    display: inline-block;
+}
+
+a {
+    color: darkblue;
+}
+
+.element {
+    display: block;
+}
+
+.element .element, .element .comment, .element .processing-instruction {
+    margin-left: 1rem;
+}
+
+.valid {
+    color: darkgreen;
+}
+
+.error, .invalid {
+    color: crimson;
+}
+
+em {
+    font-weight: bold;
+}
