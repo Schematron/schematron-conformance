@@ -1,0 +1,23 @@
+<testcase xmlns="tag:dmaus@dmaus.name,2019:Schematron:Testsuite" id="rule-abstract-02" expect="error">
+  <label>It is an error to extend an abstract rule that is defined in a different pattern</label>
+  <reference>ISO Schematron 2016: Section 5.4.12 clause 5</reference>
+  <documents>
+    <primary filename="document.xml">
+      <element xmlns=""/>
+    </primary>
+  </documents>
+  <schemas>
+    <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+      <sch:pattern>
+        <sch:rule abstract="true" id="abstract-rule">
+          <sch:report test="self::element"/>
+        </sch:rule>
+      </sch:pattern>
+      <sch:pattern>
+        <sch:rule context="element">
+          <sch:extends rule="abstract-rule"/>
+        </sch:rule>
+      </sch:pattern>
+    </sch:schema>
+  </schemas>
+</testcase>
