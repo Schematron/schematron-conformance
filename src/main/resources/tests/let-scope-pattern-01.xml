@@ -1,0 +1,25 @@
+<testcase xmlns="tag:dmaus@dmaus.name,2019:Schematron:Testsuite" expect="valid" id="let-scope-pattern-01">
+  <label>Pattern-variable is scoped to the pattern</label>
+  <reference>ISO Schematron 2016: Section 3.26</reference>
+  <documents>
+    <primary filename="document.xml">
+      <document xmlns=""/>
+    </primary>
+  </documents>
+  <schemas>
+    <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+      <sch:let name="foo" value="0"/>
+      <sch:pattern>
+        <sch:let name="foo" value="1"/>
+        <sch:rule context="*">
+          <sch:assert test="$foo = 1"/>
+        </sch:rule>
+      </sch:pattern>
+      <sch:pattern>
+        <sch:rule context="*">
+          <sch:assert test="$foo = 0"/>
+        </sch:rule>
+      </sch:pattern>
+    </sch:schema>
+  </schemas>
+</testcase>
