@@ -6,7 +6,7 @@
       <document xmlns=""/>
     </primary>
   </documents>
-  <schemas>
+  <schemas phase="phase">
     <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
       <sch:phase id="phase">
         <sch:let name="local-name" value="'document'"/>
