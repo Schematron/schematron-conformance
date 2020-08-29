@@ -12,7 +12,7 @@
         <sch:let name="local-name" value="'document'"/>
         <sch:active pattern="pattern"/>
       </sch:phase>
-      <sch:pattern>
+      <sch:pattern id="pattern">
         <sch:rule context="*[local-name() = $local-name]">
           <sch:assert test="true()"/>
         </sch:rule>
