@@ -5,9 +5,14 @@
     <primary filename="document.xml">
       <element xmlns=""/>
     </primary>
-    <secondary filename="subdir/include.sch">
+    <secondary filename="subdir/include-1.sch">
       <rule xmlns="http://purl.oclc.org/dsdl/schematron" context="/">
-        <assert test="local-name(document('include.sch')/*[1]) = 'rule'"/>
+        <extends href="include-2.sch"/>
+      </rule>
+    </secondary>
+    <secondary filename="subdir/include-2.sch">
+      <rule xmlns="http://purl.oclc.org/dsdl/schematron" context="/">
+        <assert test="true()"/>
       </rule>
     </secondary>
   </documents>
@@ -15,7 +20,7 @@
     <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
       <sch:pattern>
         <sch:rule context="/">
-          <sch:extends href="subdir/include.sch"/>
+          <sch:extends href="subdir/include-1.sch"/>
         </sch:rule>
       </sch:pattern>
     </sch:schema>
