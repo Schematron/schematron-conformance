@@ -1,4 +1,4 @@
-<testcase xmlns="tag:dmaus@dmaus.name,2019:Schematron:Testsuite" expect="invalid" id="svrl-property-copy-of">
+<testcase xmlns="tag:dmaus@dmaus.name,2019:Schematron:Testsuite" expect="invalid" features="svrl" id="svrl-property-copy-of">
   <label>A xsl:copy-of inside a sch:property is executed</label>
   <reference>ISO Schematron 2016: Annex C Clause 11 (xslt), Annex H Clause 11 (xslt2)</reference>
   <documents>
