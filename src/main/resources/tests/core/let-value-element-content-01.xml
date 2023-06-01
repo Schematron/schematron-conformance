@@ -14,7 +14,7 @@
       </sch:let>
       <sch:pattern>
         <sch:rule context="/">
-          <sch:assert test="count($foobar/html:p) = 1"/>
+          <sch:assert test="count(html:p) = 1"/>
         </sch:rule>
       </sch:pattern>
     </sch:schema>
