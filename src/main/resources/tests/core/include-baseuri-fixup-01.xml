@@ -11,7 +11,7 @@
       </rule>
     </secondary>
     <secondary filename="subdir/include-2.sch">
-      <assert test="true()"/>
+      <assert xmlns="http://purl.oclc.org/dsdl/schematron" test="true()"/>
     </secondary>
   </documents>
   <schemas>
