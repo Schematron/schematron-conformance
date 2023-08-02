@@ -1,74 +1,53 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           elementFormDefault="qualified" targetNamespace="tag:dmaus@dmaus.name,2019:Schematron:Testsuite">
-
+           targetNamespace="https://doi.org/10.5281/zenodo.5679629#"
+           elementFormDefault="qualified" attributeFormDefault="unqualified">
   <xs:element name="testcase">
     <xs:complexType>
-      <xs:sequence>
-        <xs:element name="label" minOccurs="1" maxOccurs="1">
-          <xs:simpleType>
-            <xs:restriction base="xs:string"/>
-          </xs:simpleType>
-        </xs:element>
-        <xs:element name="reference" minOccurs="0" maxOccurs="1">
-          <xs:simpleType>
-            <xs:restriction base="xs:string"/>
-          </xs:simpleType>
-        </xs:element>
-        <xs:element name="documents">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="primary" minOccurs="1" maxOccurs="1">
-                <xs:complexType>
-                  <xs:sequence>
-                    <xs:any minOccurs="1" maxOccurs="1" processContents="skip"/>
-                  </xs:sequence>
-                  <xs:attribute name="id" type="xs:ID" use="optional"/>
-                  <xs:attribute name="filename" type="xs:string" use="required"/>
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="secondary" minOccurs="0" maxOccurs="unbounded">
-                <xs:complexType>
-                  <xs:sequence>
-                    <xs:any minOccurs="1" maxOccurs="1" processContents="skip"/>
-                  </xs:sequence>
-                  <xs:attribute name="filename" type="xs:string" use="required"/>
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="schemas">
+      <xs:sequence minOccurs="1" maxOccurs="1">
+        <xs:element name="label" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="schemas" minOccurs="1" maxOccurs="1">
           <xs:complexType>
             <xs:sequence>
               <xs:any minOccurs="1" maxOccurs="unbounded" processContents="skip"/>
             </xs:sequence>
-            <xs:attribute name="phase" use="optional" type="xs:string"/>
           </xs:complexType>
         </xs:element>
-        <xs:element name="expectations" minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="documents" minOccurs="1" maxOccurs="1">
           <xs:complexType>
-            <xs:sequence>
-              <xs:element name="expectation" minOccurs="1" maxOccurs="unbounded">
+            <xs:sequence minOccurs="1" maxOccurs="1">
+              <xs:element name="document" minOccurs="1" maxOccurs="unbounded">
                 <xs:complexType>
-                  <xs:attribute name="test" type="xs:string" use="required"/>
+                  <xs:sequence>
+                    <xs:any minOccurs="1" maxOccurs="unbounded" processContents="skip"/>
+                  </xs:sequence>
+                  <xs:attribute name="filename" type="xs:string" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="assertions" minOccurs="0" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence minOccurs="1" maxOccurs="1">
+              <xs:element name="assertion" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="assert" use="required" type="xs:string"/>
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:sequence>
-      <xs:attribute name="id" type="xs:ID" use="required"/>
-      <xs:attribute name="expect">
+      <xs:attribute name="expect" use="required">
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:enumeration value="valid"/>
-            <xs:enumeration value="invalid"/>
             <xs:enumeration value="error"/>
+            <xs:enumeration value="invalid"/>
+            <xs:enumeration value="valid"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:attribute>
-      <xs:attribute name="features" type="xs:NMTOKENS" use="optional"/>
+      <xs:attribute name="phase" use="optional" type="xs:token"/>
     </xs:complexType>
   </xs:element>
-
 </xs:schema>
