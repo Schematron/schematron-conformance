@@ -1,77 +1,64 @@
 <?xml version="1.0"?>
-<grammar ns="tag:dmaus@dmaus.name,2019:Schematron:Testsuite"
+<grammar ns="https://doi.org/10.5281/zenodo.5679629#"
     xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
     <start>
         <choice>
             <notAllowed/>
             <element name="testcase">
                 <optional>
-                    <attribute name="features">
-                        <data type="NMTOKENS"/>
+                    <attribute name="phase">
+                        <data type="token"/>
                     </attribute>
                 </optional>
-                <optional>
-                    <attribute name="expect">
-                        <choice>
-                            <value type="string">valid</value>
-                            <value type="string">invalid</value>
-                            <value type="string">error</value>
-                        </choice>
-                    </attribute>
-                </optional>
-                <attribute name="id">
-                    <data type="ID"/>
+                <attribute name="expect">
+                    <choice>
+                        <value type="string">valid</value>
+                        <value type="string">invalid</value>
+                        <value type="string">error</value>
+                    </choice>
                 </attribute>
-                <element name="label">
-                    <data type="string"/>
-                </element>
                 <optional>
-                    <element name="reference">
-                        <data type="string"/>
+                    <element name="label">
+                        <mixed>
+                            <zeroOrMore>
+                                <choice>
+                                    <attribute>
+                                    <anyName/>
+                                    </attribute>
+                                    <ref name="element0"/>
+                                </choice>
+                            </zeroOrMore>
+                        </mixed>
                     </element>
                 </optional>
+                <element name="schemas">
+                    <oneOrMore>
+                        <ref name="element1"/>
+                    </oneOrMore>
+                </element>
                 <element name="documents">
-                    <element name="primary">
-                        <attribute name="filename">
-                            <data type="string"/>
-                        </attribute>
-                        <optional>
-                            <attribute name="id">
-                                <data type="ID"/>
-                            </attribute>
-                        </optional>
-                        <ref name="element0"/>
-                    </element>
-                    <zeroOrMore>
-                        <element name="secondary">
+                    <oneOrMore>
+                        <element name="document">
                             <attribute name="filename">
                                 <data type="string"/>
                             </attribute>
-                            <ref name="element1"/>
+                            <oneOrMore>
+                                <ref name="element2"/>
+                            </oneOrMore>
                         </element>
-                    </zeroOrMore>
-                </element>
-                <element name="schemas">
-                    <optional>
-                        <attribute name="phase">
-                            <data type="string"/>
-                        </attribute>
-                    </optional>
-                    <oneOrMore>
-                        <ref name="element2"/>
                     </oneOrMore>
                 </element>
-                <zeroOrMore>
-                    <element name="expectations">
-                        <oneOrMore>
-                            <element name="expectation">
-                                <attribute name="test">
+                <optional>
+                    <element name="assertions">
+                        <zeroOrMore>
+                            <element name="assertion">
+                                <attribute name="assert">
                                     <data type="string"/>
                                 </attribute>
                             </element>
-                        </oneOrMore>
+                        </zeroOrMore>
                     </element>
-                </zeroOrMore>
+                </optional>
             </element>
         </choice>
     </start>
@@ -81,10 +68,10 @@
             <mixed>
                 <zeroOrMore>
                     <choice>
-                        <ref name="element0"/>
                         <attribute>
                             <anyName/>
                         </attribute>
+                        <ref name="element0"/>
                     </choice>
                 </zeroOrMore>
             </mixed>

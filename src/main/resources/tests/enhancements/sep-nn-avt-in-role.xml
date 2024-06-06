@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testcase expect="invalid" xmlns="https://doi.org/10.5281/zenodo.5679629#">
+  <testcase:label xmlns:testcase="https://doi.org/10.5281/zenodo.5679629#">The @role attribute may contain an attribute value template</testcase:label>
+  <schemas>
+    <schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt3"
+            xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+      <let name="role" value="'avt'"/>
+      <pattern>
+        <rule context="*">
+          <assert test="false()" role="{$role}"/>
+        </rule>
+      </pattern>
+    </schema>
+  </schemas>
+  <documents>
+    <document filename="document.xml">
+      <root xmlns=""/>
+    </document>
+  </documents>
+  <assertions xmlns:svrl="http://purl.oclc.org/dsdl/svrl">
+    <assertion assert="count(//svrl:failed-assert[@role = 'avt']) = 1"/>
+  </assertions>
+</testcase>

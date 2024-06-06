@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testcase expect="valid" xmlns="https://doi.org/10.5281/zenodo.5679629#">
+  <label>An @as attribute on sch:let gives the expected type of its value</label>
+  <schemas>
+    <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+      <sch:ns prefix="xs" uri="http://www.w3.org/2001/XMLSchema"/>
+      <sch:let name="variable" as="xs:integer" value="3"/>
+      <sch:pattern>
+        <sch:rule context="*">
+          <sch:assert test="$variable instance of xs:integer"/>
+        </sch:rule>
+      </sch:pattern>
+    </sch:schema>
+  </schemas>
+  <documents>
+    <document filename="document.xml">
+      <element xmlns=""/>
+    </document>
+  </documents>
+</testcase>

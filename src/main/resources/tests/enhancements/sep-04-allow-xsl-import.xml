@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testcase expect="invalid" xmlns="https://doi.org/10.5281/zenodo.5679629#">
+  <testcase:label xmlns:testcase="https://doi.org/10.5281/zenodo.5679629#">The xsl:import element may be used before the sch:pattern element</testcase:label>
+  <schemas>
+    <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+      <sch:ns prefix="ex" uri="http://example.com/ns"/>
+      <xsl:import href="include.xsl" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"/>
+      <sch:pattern>
+        <sch:rule context="/">
+          <sch:report test="ex:function() = '1'"/>
+        </sch:rule>
+      </sch:pattern>
+    </sch:schema>
+  </schemas>
+  <documents>
+    <document filename="document.xml">
+      <root xmlns=""/>
+    </document>
+    <document filename="include.xsl">
+      <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ex="http://example.com/ns">
+        <xsl:function name="ex:function">
+          <xsl:value-of select="'1'"/>
+        </xsl:function>
+      </xsl:stylesheet>
+    </document>
+  </documents>
+</testcase>
