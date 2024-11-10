@@ -45,7 +45,7 @@ final public class Locator
 
     public Locator () throws URISyntaxException, IOException
     {
-        directory = getClass().getResource("/tests").toURI();
+        directory = getClass().getResource("/testcases").toURI();
         try {
             FileSystems.getFileSystem(directory);
         } catch (FileSystemNotFoundException e) {
