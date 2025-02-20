@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testcase expect="valid" xmlns="https://doi.org/10.5281/zenodo.5679629#">
-  <testcase:label xmlns:testcase="https://doi.org/10.5281/zenodo.5679629#">The order of rules is significant</testcase:label>
+  <testcase:label xmlns:testcase="https://doi.org/10.5281/zenodo.5679629#">The order of rules in a pattern is significant</testcase:label>
   <schemas>
     <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
       <sch:pattern>

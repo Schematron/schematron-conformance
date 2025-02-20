@@ -1,7 +1,0 @@
-<testsuite xmlns="https://doi.org/10.5281/zenodo.5679629#">
-  <label>ISO Schematron 2025 with XSLT 3.0 query language binding</label>
-  <include href="iso-schematron-xslt-3.xml"/>
-  <testcase href="iso-schema-composition/schema-phase-from.xml"/>
-  <testcase href="iso-pattern-templating/pattern-abstract-default-values.xml"/>
-  <testcase href="iso-rule-based-validation/rule-visit-each.xml"/>
-</testsuite>

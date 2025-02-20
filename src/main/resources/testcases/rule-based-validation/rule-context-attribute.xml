@@ -12,7 +12,7 @@
   </schemas>
   <documents>
     <document filename="document.xml">
-      <root attr="value"/>
+      <root xmlns="" attr="value"/>
     </document>
   </documents>
 </testcase>
