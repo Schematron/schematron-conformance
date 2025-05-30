@@ -1,4 +1,5 @@
 <testsuite xmlns="https://doi.org/10.5281/zenodo.5679629#">
+  <label>Tests related to schema composition in general</label>
   <testcase href="../../testcases/schema-composition/extends-href-fragment-xml-id.xml"/>
   <testcase href="../../testcases/schema-composition/extends-recursive.xml"/>
   <testcase href="../../testcases/schema-composition/include-href-fragment-xml-id.xml"/>

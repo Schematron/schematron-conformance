@@ -1,4 +1,5 @@
 <testsuite xmlns="https://doi.org/10.5281/zenodo.5679629#">
+  <label>Tests related to rule based validation in general</label>
   <testcase href="../../testcases/rule-based-validation/rule-context-attribute.xml"/>
   <testcase href="../../testcases/rule-based-validation/rule-context-comment.xml"/>
   <testcase href="../../testcases/rule-based-validation/rule-context-document.xml"/>

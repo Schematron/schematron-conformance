@@ -1,4 +1,5 @@
 <testsuite xmlns="https://doi.org/10.5281/zenodo.5679629#">
+  <label>Tests related to pattern templating in general</label>
   <testcase href="../../testcases/pattern-templating/pattern-abstract-assert-test.xml"/>
   <testcase href="../../testcases/pattern-templating/pattern-abstract-context.xml"/>
   <testcase href="../../testcases/pattern-templating/pattern-abstract-diagnostic-value-of.xml"/>
