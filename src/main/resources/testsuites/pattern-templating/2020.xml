@@ -9,4 +9,7 @@
   <testcase href="../../testcases/pattern-templating/pattern-abstract-report-test.xml"/>
   <testcase href="../../testcases/pattern-templating/pattern-abstract-value-of.xml"/>
   <testcase href="../../testcases/pattern-templating/pattern-abstract.xml"/>
+  <testcase href="../../testcases/pattern-templating/pattern-abstract-pattern-let-value.xml"/>
+  <testcase href="../../testcases/pattern-templating/pattern-abstract-property-copy-of.xml"/>
+  <testcase href="../../testcases/pattern-templating/pattern-abstract-rule-let-value.xml"/>
 </testsuite>

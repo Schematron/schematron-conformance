@@ -1,7 +1,0 @@
-<testsuite xmlns="https://doi.org/10.5281/zenodo.5679629#">
-  <label>Tests related to pattern templating with query language XSLT 3.0</label>
-  <include href="2020.xml"/>
-  <testcase href="../../testcases/pattern-templating/pattern-abstract-pattern-let-value.xml"/>
-  <testcase href="../../testcases/pattern-templating/pattern-abstract-property-copy-of.xml"/>
-  <testcase href="../../testcases/pattern-templating/pattern-abstract-rule-let-value.xml"/>
-</testsuite>

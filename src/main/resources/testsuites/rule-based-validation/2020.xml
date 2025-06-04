@@ -7,4 +7,11 @@
   <testcase href="../../testcases/rule-based-validation/rule-context-pi.xml"/>
   <testcase href="../../testcases/rule-based-validation/rule-context-text.xml"/>
   <testcase href="../../testcases/rule-based-validation/rule-order-pattern.xml"/>
+  <testcase href="../../testcases/rule-based-validation/let-value-element-content.xml"/>
+  <testcase href="../../testcases/rule-based-validation/rule-context-global-variable.xml"/>
+  <testcase href="../../testcases/rule-based-validation/rule-context-pattern-variable.xml"/>
+  <testcase href="../../testcases/rule-based-validation/rule-context-phase-variable.xml"/>
+  <testcase href="../../testcases/rule-based-validation/xsl-key-element-content.xml"/>
+  <testcase href="../../testcases/rule-based-validation/xsl-key.xml"/>
+  <testcase href="../../testcases/rule-based-validation/xsl-function.xml"/>
 </testsuite>
