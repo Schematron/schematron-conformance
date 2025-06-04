@@ -1,0 +1,20 @@
+<testsuite xmlns="https://doi.org/10.5281/zenodo.5679629#">
+  <label>WIP ISO Schematron 2025 test cases</label>
+  <testcase href="../testcases/rule-based-validation/rule-order-group.xml"/>
+
+  <testcase href="../testcases/pattern-templating/group-abstract-group-let-value.xml"/>
+  <testcase href="../testcases/pattern-templating/group-abstract-property-copy-of.xml"/>
+  <testcase href="../testcases/pattern-templating/group-abstract-rule-let-value.xml"/>
+  <testcase href="../testcases/pattern-templating/group-abstract-assert-test.xml"/>
+  <testcase href="../testcases/pattern-templating/group-abstract-context.xml"/>
+  <testcase href="../testcases/pattern-templating/group-abstract-diagnostic-value-of.xml"/>
+  <testcase href="../testcases/pattern-templating/group-abstract-name-path.xml"/>
+  <testcase href="../testcases/pattern-templating/group-abstract-group-documents.xml"/>
+  <testcase href="../testcases/pattern-templating/group-abstract-property-value-of.xml"/>
+  <testcase href="../testcases/pattern-templating/group-abstract-report-test.xml"/>
+  <testcase href="../testcases/pattern-templating/group-abstract-value-of.xml"/>
+  <testcase href="../testcases/pattern-templating/group-abstract.xml"/>
+
+  <testcase href="../testcases/schema-composition/schema-phase-from.xml"/>
+
+</testsuite>
