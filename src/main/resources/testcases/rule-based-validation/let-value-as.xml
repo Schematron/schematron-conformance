@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testcase expect="valid" xmlns="https://doi.org/10.5281/zenodo.5679629#">
+  <label>The @as attribute on a let element specifies the variables datatype</label>
+  <schemas>
+    <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns="">
+      <sch:ns prefix="xs" uri="http://www.w3.org/2001/XMLSchema"/>
+      <sch:let name="variable-int" as="xs:integer" value="1"/>
+      <sch:let name="variable-elements" as="element(e)+">
+        <e/>
+        <e/>
+      </sch:let>
+      <sch:pattern>
+        <sch:rule context="/">
+          <sch:assert test="$variable-int instance of xs:integer"/>
+          <sch:assert test="$variable-elements instance of element(e)+"/>
+        </sch:rule>
+      </sch:pattern>
+    </sch:schema>
+  </schemas>
+  <documents>
+    <document filename="document.xml">
+      <root xmlns=""/>
+    </document>
+  </documents>
+</testcase>
