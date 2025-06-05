@@ -3,7 +3,7 @@
   <label>The first @when attribute on a phase element whose expression evaluates to true selects the active phase if the phase is #ANY</label>
   <schemas>
     <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-      <sch:phase id="phase" when="true()">
+      <sch:phase id="phase" when="element">
         <sch:active pattern="pattern-1"/>
       </sch:phase>
       <sch:pattern id="pattern-1">
