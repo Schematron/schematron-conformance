@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testcase expect="invalid" xmlns="https://doi.org/10.5281/zenodo.5679629#" phase="#ANY">
+  <label>The first @when attribute on a phase element whose expression evaluates to true selects the active phase if the phase is #ANY</label>
+  <schemas>
+    <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+      <sch:phase id="phase" when="true()">
+        <sch:active pattern="pattern-1"/>
+      </sch:phase>
+      <sch:pattern id="pattern-1">
+        <sch:rule context="*">
+          <sch:assert test="false()"/>
+        </sch:rule>
+      </sch:pattern>
+    </sch:schema>
+  </schemas>
+  <documents>
+    <document filename="document.xml">
+      <root xmlns="">
+        <element/>
+      </root>
+    </document>
+  </documents>
+</testcase>

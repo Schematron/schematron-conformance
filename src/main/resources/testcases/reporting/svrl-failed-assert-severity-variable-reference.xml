@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testcase expect="invalid" xmlns="https://doi.org/10.5281/zenodo.5679629#">
+  <label>The svrl:failed-assert/@severity attribute contains the severity of the failed assertion</label>
+  <schemas>
+    <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+      <sch:let name="severity" value="'dynamic'"/>
+      <sch:pattern>
+        <sch:rule context="/">
+          <sch:assert test="false()" severity="$severity"/>
+        </sch:rule>
+      </sch:pattern>
+    </sch:schema>
+  </schemas>
+  <documents>
+    <document filename="document.xml">
+      <document xmlns=""/>
+    </document>
+  </documents>
+  <assertions xmlns:svrl="http://purl.oclc.org/dsdl/svrl">
+    <assertion assert="//svrl:failed-assert/@severity = 'dynamic'"/>
+  </assertions>
+</testcase>

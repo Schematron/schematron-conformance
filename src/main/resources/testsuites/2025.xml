@@ -17,5 +17,11 @@
   <testcase href="../testcases/pattern-templating/group-abstract.xml"/>
 
   <testcase href="../testcases/schema-composition/schema-phase-from.xml"/>
+  <testcase href="../testcases/schema-composition/schema-phase-when.xml"/>
+
+  <testcase href="../testcases/reporting/svrl-failed-assert-severity.xml"/>
+  <testcase href="../testcases/reporting/svrl-failed-assert-severity-variable-reference.xml"/>
+  <testcase href="../testcases/reporting/svrl-successful-report-severity.xml"/>
+  <testcase href="../testcases/reporting/svrl-successful-report-severity-variable-reference.xml"/>
 
 </testsuite>
