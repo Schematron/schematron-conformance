@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testcase expect="valid" xmlns="https://doi.org/10.5281/zenodo.5679629#">
-  <testcase:label xmlns:testcase="https://doi.org/10.5281/zenodo.5679629#">The order of rules in a pattern is significant</testcase:label>
+  <label xmlns:testcase="https://doi.org/10.5281/zenodo.5679629#">The order of rules in a pattern is significant</label>
   <schemas>
     <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
       <sch:pattern>
-        <sch:rule context="root" id="should-fire">
+        <sch:rule context="root" id="should-fire-1">
           <sch:assert test="true()"/>
         </sch:rule>
-        <sch:rule context="*" id="should-not-fire-1">
+        <sch:rule context="child" id="should-fire-2">
           <sch:assert test="false()"/>
         </sch:rule>
-        <sch:rule context="*" id="should-not-fire-2">
+        <sch:rule context="*" id="should-not-fire-1">
           <sch:assert test="false()"/>
         </sch:rule>
       </sch:pattern>
@@ -18,7 +18,10 @@
   </schemas>
   <documents>
     <document filename="document.xml">
-      <root xmlns=""/>
+      <root xmlns=""><child/></root>
     </document>
   </documents>
+  <assertions xmlns:svrl="http://purl.oclc.org/dsdl/svrl">
+    <assertion assert="//svrl:fired-rule[@id = 'should-fire-1'] and //svrl:fired-rule[@id = 'should-fire-2']"/>
+  </assertions>
 </testcase>
