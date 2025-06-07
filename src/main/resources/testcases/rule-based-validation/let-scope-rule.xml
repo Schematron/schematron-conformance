@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testcase expect="invalid" xmlns="https://doi.org/10.5281/zenodo.5679629#">
+  <label>A rule variable is scoped to the rule</label>
+  <schemas>
+    <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+      <sch:pattern>
+        <sch:rule context="root">
+          <sch:let name="variable" value="1"/>
+          <sch:report test="$variable = 1" id="report-1"/>
+        </sch:rule>
+        <sch:rule context="child">
+          <sch:let name="variable" value="2"/>
+          <sch:report test="$variable = 2" id="report-2"/>
+        </sch:rule>
+      </sch:pattern>
+    </sch:schema>
+  </schemas>
+  <documents>
+    <document filename="document.xml">
+      <root xmlns="">
+        <child/>
+      </root>
+    </document>
+  </documents>
+  <assertions xmlns:svrl="http://purl.oclc.org/dsdl/svrl">
+    <assertion assert="//svrl:successful-report[@id = 'report-2']"/>
+  </assertions>
+</testcase>
