@@ -8,7 +8,7 @@
           <sch:assert test="true()"/>
         </sch:rule>
         <sch:rule context="child" id="should-fire-2">
-          <sch:assert test="false()"/>
+          <sch:assert test="true()"/>
         </sch:rule>
         <sch:rule context="*" id="should-not-fire-1">
           <sch:assert test="false()"/>
@@ -22,6 +22,6 @@
     </document>
   </documents>
   <assertions xmlns:svrl="http://purl.oclc.org/dsdl/svrl">
-    <assertion assert="//svrl:fired-rule[@id = 'should-fire-1'] and //svrl:fired-rule[@id = 'should-fire-2']"/>
+    <assertion assert="count(//svrl:fired-rule[@id = 'should-fire-1']) = 1 and count(//svrl:fired-rule[@id = 'should-fire-2']) = 1"/>
   </assertions>
 </testcase>
