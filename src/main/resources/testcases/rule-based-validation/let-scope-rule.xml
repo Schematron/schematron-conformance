@@ -23,6 +23,6 @@
     </document>
   </documents>
   <assertions xmlns:svrl="http://purl.oclc.org/dsdl/svrl">
-    <assertion assert="//svrl:successful-report[@id = 'report-2']"/>
+    <assertion assert="//svrl:successful-report[@id = 'report-2'] and //svrl:successful-report[@id = 'report-1']"/>
   </assertions>
 </testcase>

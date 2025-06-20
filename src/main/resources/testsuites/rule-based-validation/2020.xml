@@ -15,4 +15,6 @@
   <testcase href="../../testcases/rule-based-validation/xsl-key.xml"/>
   <testcase href="../../testcases/rule-based-validation/xsl-function.xml"/>
   <testcase href="../../testcases/rule-based-validation/let-scope-rule.xml"/>
+  <testcase href="../../testcases/rule-based-validation/let-scope-pattern.xml"/>
+  <testcase href="../../testcases/rule-based-validation/let-scope-phase.xml"/>
 </testsuite>
