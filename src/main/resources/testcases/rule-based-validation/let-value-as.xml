@@ -2,19 +2,66 @@
 <testcase expect="valid" xmlns="https://doi.org/10.5281/zenodo.5679629#">
   <label>The @as attribute on a let element specifies the variables datatype</label>
   <schemas>
-    <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns="">
+    <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns="" defaultPhase="phase">
       <sch:ns prefix="xs" uri="http://www.w3.org/2001/XMLSchema"/>
-      <sch:let name="variable-int" as="xs:integer" value="1"/>
-      <sch:let name="variable-elements" as="element(e)+">
+      <sch:phase id="default">
+        <sch:let name="phase-variable-int" as="xs:integer" value="1"/>
+        <sch:let name="phase-variable-elements" as="element(e)+">
+          <e/>
+          <e/>
+        </sch:let>
+        <sch:active pattern="p-1"/>
+        <sch:active pattern="p-2"/>
+      </sch:phase>
+      <sch:let name="schema-variable-int" as="xs:integer" value="1"/>
+      <sch:let name="schema-variable-elements" as="element(e)+">
         <e/>
         <e/>
       </sch:let>
-      <sch:pattern>
+      <sch:pattern id="p-1">
+        <sch:let name="pattern-variable-int" as="xs:integer" value="1"/>
+        <sch:let name="pattern-variable-elements" as="element(e)+">
+          <e/>
+          <e/>
+        </sch:let>
         <sch:rule context="/">
-          <sch:assert test="$variable-int instance of xs:integer"/>
-          <sch:assert test="$variable-elements instance of element(e)+"/>
+          <sch:let name="rule-variable-int" as="xs:integer" value="1"/>
+          <sch:let name="rule-variable-elements" as="element(e)+">
+            <e/>
+            <e/>
+          </sch:let>
+          <sch:assert test="$phase-variable-int instance of xs:integer"/>
+          <sch:assert test="$phase-variable-elements instance of element(e)+"/>
+          <sch:assert test="$schema-variable-int instance of xs:integer"/>
+          <sch:assert test="$schema-variable-elements instance of element(e)+"/>
+          <sch:assert test="$pattern-variable-int instance of xs:integer"/>
+          <sch:assert test="$pattern-variable-elements instance of element(e)+"/>
+          <sch:assert test="$rule-variable-int instance of xs:integer"/>
+          <sch:assert test="$rule-variable-elements instance of element(e)+"/>
         </sch:rule>
       </sch:pattern>
+      <sch:group id="p-2">
+        <sch:let name="group-variable-int" as="xs:integer" value="1"/>
+        <sch:let name="group-variable-elements" as="element(e)+">
+          <e/>
+          <e/>
+        </sch:let>
+        <sch:rule context="/">
+          <sch:let name="rule-variable-int" as="xs:integer" value="1"/>
+          <sch:let name="rule-variable-elements" as="element(e)+">
+            <e/>
+            <e/>
+          </sch:let>
+          <sch:assert test="$phase-variable-int instance of xs:integer"/>
+          <sch:assert test="$phase-variable-elements instance of element(e)+"/>
+          <sch:assert test="$schema-variable-int instance of xs:integer"/>
+          <sch:assert test="$schema-variable-elements instance of element(e)+"/>
+          <sch:assert test="$group-variable-int instance of xs:integer"/>
+          <sch:assert test="$group-variable-elements instance of element(e)+"/>
+          <sch:assert test="$rule-variable-int instance of xs:integer"/>
+          <sch:assert test="$rule-variable-elements instance of element(e)+"/>
+        </sch:rule>
+      </sch:group>
     </sch:schema>
   </schemas>
   <documents>
