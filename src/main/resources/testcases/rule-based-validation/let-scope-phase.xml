@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testcase expect="invalid" xmlns="https://doi.org/10.5281/zenodo.5679629#" phase="phase-1">
+  <label>A phase variable is scoped to the pattern</label>
+  <schemas>
+    <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+      <sch:phase id="phase-1">
+        <sch:let name="variable" value="1"/>
+        <sch:active pattern="pattern-1"/>
+      </sch:phase>
+      <sch:phase id="phase-2">
+        <sch:let name="variable" value="2"/>
+        <sch:active pattern="pattern-2"/>
+      </sch:phase>
+      <sch:pattern id="pattern-1">
+        <sch:rule context="root">
+          <sch:report test="$variable = 1" id="report-1"/>
+        </sch:rule>
+      </sch:pattern>
+      <sch:pattern id="pattern-2">
+        <sch:rule context="child">
+          <sch:report test="$variable = 2" id="report-2"/>
+        </sch:rule>
+      </sch:pattern>
+    </sch:schema>
+  </schemas>
+  <documents>
+    <document filename="document.xml">
+      <root xmlns="">
+        <child/>
+      </root>
+    </document>
+  </documents>
+</testcase>
