@@ -20,11 +20,14 @@
 
   <testcase href="../testcases/schema-composition/schema-phase-from.xml"/>
   <testcase href="../testcases/schema-composition/schema-phase-when.xml"/>
+  <testcase href="../testcases/schema-composition/extends-library-library.xml"/>
   <testcase href="../testcases/schema-composition/rule-abstract-container.xml"/>
 
   <testcase href="../testcases/reporting/svrl-failed-assert-severity.xml"/>
+  <testcase href="../testcases/reporting/svrl-failed-assert-flag-variable-reference.xml"/>
   <testcase href="../testcases/reporting/svrl-failed-assert-severity-variable-reference.xml"/>
   <testcase href="../testcases/reporting/svrl-successful-report-severity.xml"/>
+  <testcase href="../testcases/reporting/svrl-successful-report-flag-variable-reference.xml"/>
   <testcase href="../testcases/reporting/svrl-successful-report-severity-variable-reference.xml"/>
   <testcase href="../testcases/reporting/svrl-active-group-documents-primary.xml"/>
   <testcase href="../testcases/reporting/svrl-active-group-documents.xml"/>

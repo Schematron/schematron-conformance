@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testcase expect="error" xmlns="https://doi.org/10.5281/zenodo.5679629#">
+  <label>Top-level sch:extends in a library only incorporates external definitions from another library</label>
+  <schemas>
+    <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+      <sch:extends href="library-1.sch"/>
+    </sch:schema>
+  </schemas>
+  <documents>
+    <document filename="document.xml">
+      <element xmlns=""/>
+    </document>
+    <document filename="library-1.sch">
+      <sch:library xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+        <sch:extends href="library-2.sch"/>
+      </sch:library>
+    </document>
+    <document filename="library-2.sch">
+      <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+        <sch:pattern>
+          <sch:rule context="/">
+            <sch:assert test="false()"/>
+          </sch:rule>
+        </sch:pattern>
+      </sch:schema>
+    </document>
+  </documents>
+</testcase>
