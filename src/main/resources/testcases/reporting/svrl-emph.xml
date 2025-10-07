@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testcase expect="invalid" xmlns="https://doi.org/10.5281/zenodo.5679629#">
-  <label xmlns:testcase="https://doi.org/10.5281/zenodo.5679629#">The svrl:active-pattern/@id attribute contains the id of the active pattern</label>
+  <label>The sch:emph element is reported as a svrl:emph element</label>
   <schemas>
     <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-      <sch:pattern id="pattern">
+      <sch:pattern>
         <sch:rule context="/">
-          <sch:report test="true()"/>
+          <sch:assert test="false()">
+            <sch:emph>direction</sch:emph>
+          </sch:assert>
         </sch:rule>
       </sch:pattern>
     </sch:schema>
@@ -16,6 +18,6 @@
     </document>
   </documents>
   <assertions xmlns:svrl="http://purl.oclc.org/dsdl/svrl">
-    <assertion assert="//svrl:active-pattern[@id = 'pattern']"/>
+    <assertion assert="//svrl:emph"/>
   </assertions>
 </testcase>

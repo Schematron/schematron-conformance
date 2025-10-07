@@ -18,6 +18,11 @@
   <testcase href="../testcases/pattern-templating/group-abstract-value-of.xml"/>
   <testcase href="../testcases/pattern-templating/group-abstract.xml"/>
 
+  <testcase href="../testcases/pattern-templating/pattern-abstract-param-undeclared.xml"/>
+  <testcase href="../testcases/pattern-templating/pattern-abstract-param-unused.xml"/>
+  <testcase href="../testcases/pattern-templating/group-abstract-param-undeclared.xml"/>
+  <testcase href="../testcases/pattern-templating/group-abstract-param-unused.xml"/>
+
   <testcase href="../testcases/schema-composition/schema-phase-from.xml"/>
   <testcase href="../testcases/schema-composition/schema-phase-when.xml"/>
   <testcase href="../testcases/schema-composition/extends-library-library.xml"/>
@@ -29,8 +34,9 @@
   <testcase href="../testcases/reporting/svrl-successful-report-severity.xml"/>
   <testcase href="../testcases/reporting/svrl-successful-report-flag-variable-reference.xml"/>
   <testcase href="../testcases/reporting/svrl-successful-report-severity-variable-reference.xml"/>
-  <testcase href="../testcases/reporting/svrl-active-group-documents-primary.xml"/>
-  <testcase href="../testcases/reporting/svrl-active-group-documents.xml"/>
   <testcase href="../testcases/reporting/svrl-active-group-id.xml"/>
+  <testcase href="../testcases/reporting/svrl-active-group-documents.xml"/>
+  <testcase href="../testcases/reporting/svrl-active-group-name.xml"/>
+  <testcase href="../testcases/reporting/svrl-active-group-role.xml"/>
 
 </testsuite>

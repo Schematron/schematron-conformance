@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testcase expect="error" xmlns="https://doi.org/10.5281/zenodo.5679629#">
+  <label>It is an error to not define a declared abstract group parameter without a default value.</label>
+  <schemas>
+    <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+      <sch:group abstract="true" id="abstract-group">
+        <sch:param name="param-1"/>
+        <sch:rule context="/">
+          <sch:assert test="false()"/>
+        </sch:rule>
+      </sch:group>
+      <sch:group is-a="abstract-group"/>
+    </sch:schema>
+  </schemas>
+  <documents>
+    <document filename="document.xml">
+      <element xmlns=""/>
+    </document>
+  </documents>
+</testcase>

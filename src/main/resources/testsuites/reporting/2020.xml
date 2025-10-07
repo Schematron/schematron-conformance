@@ -1,8 +1,9 @@
 <testsuite xmlns="https://doi.org/10.5281/zenodo.5679629#">
   <label>Tests related to reporting in general</label>
-  <testcase href="../../testcases/reporting/svrl-active-pattern-documents-primary.xml"/>
-  <testcase href="../../testcases/reporting/svrl-active-pattern-documents.xml"/>
   <testcase href="../../testcases/reporting/svrl-active-pattern-id.xml"/>
+  <testcase href="../../testcases/reporting/svrl-active-pattern-name.xml"/>
+  <testcase href="../../testcases/reporting/svrl-active-pattern-documents.xml"/>
+  <testcase href="../../testcases/reporting/svrl-active-pattern-role.xml"/>
   <testcase href="../../testcases/reporting/svrl-diagnostic-fpi.xml"/>
   <testcase href="../../testcases/reporting/svrl-diagnostic-icon.xml"/>
   <testcase href="../../testcases/reporting/svrl-diagnostic-language.xml"/>
@@ -45,4 +46,11 @@
   <testcase href="../../testcases/reporting/svrl-successful-report-role.xml"/>
   <testcase href="../../testcases/reporting/svrl-successful-report-test.xml"/>
   <testcase href="../../testcases/reporting/svrl-value-of.xml"/>
+  <testcase href="../../testcases/reporting/svrl-dir.xml"/>
+  <testcase href="../../testcases/reporting/svrl-dir-dir.xml"/>
+  <testcase href="../../testcases/reporting/svrl-emph.xml"/>
+  <testcase href="../../testcases/reporting/svrl-span.xml"/>
+  <testcase href="../../testcases/reporting/svrl-span-class.xml"/>
+  <testcase href="../../testcases/reporting/svrl-schema-p.xml"/>
+  <testcase href="../../testcases/reporting/svrl-schema-p-icon.xml"/>
 </testsuite>

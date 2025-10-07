@@ -1,33 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testcase expect="invalid" xmlns="https://doi.org/10.5281/zenodo.5679629#">
-  <label>The svrl:active-group/@documents attribute contains the URIs of the subordinate documents</label>
+  <label>The svrl:active-group/@documents attribute contains the value of the sch:group/@documents attribute</label>
   <schemas>
     <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-      <sch:group documents="/document/include/@href">
+      <sch:group documents="/element/@secondary">
         <sch:rule context="/">
-          <sch:report test="true()"/>
+          <sch:report test="root"/>
         </sch:rule>
       </sch:group>
     </sch:schema>
   </schemas>
   <documents>
     <document filename="document.xml">
-      <document xmlns="">
-        <include href="sub-1.xml"/>
-        <include href="sub-2.xml"/>
-      </document>
+      <element secondary="document-02.xml" xmlns=""/>
     </document>
-    <document filename="sub-1.xml">
-      <document xmlns=""/>
-    </document>
-    <document filename="sub-2.xml">
-      <document xmlns=""/>
+    <document filename="document-02.xml">
+      <root xmlns=""/>
     </document>
   </documents>
   <assertions xmlns:svrl="http://purl.oclc.org/dsdl/svrl">
-    <assertion assert="contains(//svrl:active-group/@documents, ' ')"/>
-    <assertion assert="contains(//svrl:active-group/@documents, 'sub-1.xml')"/>
-    <assertion assert="contains(//svrl:active-group/@documents, 'sub-2.xml')"/>
-    <assertion assert="normalize-space(//svrl:active-group/@documents) != ''"/>
+    <assertion assert="//svrl:active-group[@documents = '/element/@secondary']"/>
   </assertions>
 </testcase>

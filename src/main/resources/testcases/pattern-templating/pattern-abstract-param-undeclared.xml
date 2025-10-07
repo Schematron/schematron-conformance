@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testcase expect="error" xmlns="https://doi.org/10.5281/zenodo.5679629#">
+  <label>It is an error to use an undeclared abstract pattern parameter</label>
+  <schemas>
+    <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+      <sch:pattern abstract="true" id="abstract-pattern">
+        <sch:rule context="/">
+          <sch:assert test="false()"/>
+        </sch:rule>
+      </sch:pattern>
+      <sch:pattern is-a="abstract-pattern">
+        <sch:param name="param-1" value="param-1"/>
+      </sch:pattern>
+    </sch:schema>
+  </schemas>
+  <documents>
+    <document filename="document.xml">
+      <element xmlns=""/>
+    </document>
+  </documents>
+</testcase>
