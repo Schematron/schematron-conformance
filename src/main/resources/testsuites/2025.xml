@@ -39,4 +39,6 @@
   <testcase href="../testcases/reporting/svrl-active-group-name.xml"/>
   <testcase href="../testcases/reporting/svrl-active-group-role.xml"/>
 
+  <testcase href="../testcases/instance-document-selection/pattern-subordinate-document-from.xml"/>
+
 </testsuite>
