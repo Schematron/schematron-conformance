@@ -3,7 +3,7 @@
   <label>The sch:phase/@from attribute does not change the context for evaluating @documents</label>
   <schemas>
     <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" defaultPhase="phase-1">
-      <sch:phase name="phase-1" from="element">
+      <sch:phase id="phase-1" from="element">
         <sch:active pattern="pattern-1"/>
       </sch:phase>
       <sch:pattern documents="element/@secondary" id="pattern-1">
