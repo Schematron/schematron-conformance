@@ -2,7 +2,7 @@
 <testcase expect="valid" xmlns="https://doi.org/10.5281/zenodo.5679629#">
   <label>The @as attribute on a let element specifies the variables datatype</label>
   <schemas>
-    <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns="" defaultPhase="phase">
+    <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns="" defaultPhase="default">
       <sch:ns prefix="xs" uri="http://www.w3.org/2001/XMLSchema"/>
       <sch:phase id="default">
         <sch:let name="phase-variable-int" as="xs:integer" value="1"/>
