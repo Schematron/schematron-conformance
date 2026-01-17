@@ -38,6 +38,8 @@
   <testcase href="../testcases/reporting/svrl-active-group-documents.xml"/>
   <testcase href="../testcases/reporting/svrl-active-group-name.xml"/>
   <testcase href="../testcases/reporting/svrl-active-group-role.xml"/>
+  <testcase href="../testcases/reporting/svrl-name-nopath-subject.xml"/>
+  <testcase href="../testcases/reporting/svrl-name-nopath-rule-subject.xml"/>
 
   <testcase href="../testcases/instance-document-selection/pattern-subordinate-document-from.xml"/>
 
