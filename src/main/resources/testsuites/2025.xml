@@ -43,6 +43,8 @@
   <testcase href="../testcases/reporting/svrl-name-path-subject.xml"/>
   <testcase href="../testcases/reporting/svrl-name-path-rule-subject.xml"/>
 
+  <testcase href="../testcases/reporting/svrl-value-of-subject.xml"/>
+
   <testcase href="../testcases/instance-document-selection/pattern-subordinate-document-from.xml"/>
 
 </testsuite>
