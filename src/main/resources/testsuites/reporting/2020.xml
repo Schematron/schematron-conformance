@@ -53,4 +53,5 @@
   <testcase href="../../testcases/reporting/svrl-span-class.xml"/>
   <testcase href="../../testcases/reporting/svrl-schema-p.xml"/>
   <testcase href="../../testcases/reporting/svrl-schema-p-icon.xml"/>
+  <testcase href="../../testcases/reporting/svrl-schema-title.xml"/>
 </testsuite>
