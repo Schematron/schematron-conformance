@@ -17,6 +17,6 @@
     </document>
   </documents>
   <assertions xmlns:svrl="http://purl.oclc.org/dsdl/svrl">
-    <assertion assert="/svrl:schematron-output[@title = 'title']"/>
+    <assertion assert="/svrl:schematron-output[@title = 'Title']"/>
   </assertions>
 </testcase>
