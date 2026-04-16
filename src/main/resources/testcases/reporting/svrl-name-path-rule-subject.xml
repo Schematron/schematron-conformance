@@ -2,7 +2,7 @@
 <testcase expect="invalid" xmlns="https://doi.org/10.5281/zenodo.5679629#">
   <label>The sch:name element expands into the value of evaluating the expression in @path with the node selected by the rule's @subject attribute as context</label>
   <schemas>
-    <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    <schema><sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
       <sch:pattern>
         <sch:rule context="/element" subject="@attribute">
           <sch:report test="true()">
@@ -10,7 +10,7 @@
           </sch:report>
         </sch:rule>
       </sch:pattern>
-    </sch:schema>
+    </sch:schema></schema>
   </schemas>
   <documents>
     <document filename="document.xml">

@@ -2,7 +2,7 @@
 <testcase expect="invalid" xmlns="https://doi.org/10.5281/zenodo.5679629#">
   <label>The sch:dir element is reported as a svrl:dir element</label>
   <schemas>
-    <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    <schema><sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
       <sch:pattern>
         <sch:rule context="/">
           <sch:assert test="false()">
@@ -10,7 +10,7 @@
           </sch:assert>
         </sch:rule>
       </sch:pattern>
-    </sch:schema>
+    </sch:schema></schema>
   </schemas>
   <documents>
     <document filename="document.xml">

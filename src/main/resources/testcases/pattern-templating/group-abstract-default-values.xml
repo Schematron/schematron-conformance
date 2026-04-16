@@ -2,7 +2,7 @@
 <testcase expect="invalid" xmlns="https://doi.org/10.5281/zenodo.5679629#">
   <label>The @value attribute of an sch:param element of an abstract group provides the abstract group parameter default value</label>
   <schemas>
-    <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    <schema><sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
       <sch:group abstract="true" id="abstract-group">
         <sch:param name="element-name" value="element"/>
         <sch:rule context="$element-name">
@@ -10,7 +10,7 @@
         </sch:rule>
       </sch:group>
       <sch:group is-a="abstract-group"/>
-    </sch:schema>
+    </sch:schema></schema>
   </schemas>
   <documents>
     <document filename="document.xml">

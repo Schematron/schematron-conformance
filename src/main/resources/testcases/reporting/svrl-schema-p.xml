@@ -2,14 +2,14 @@
 <testcase expect="invalid" xmlns="https://doi.org/10.5281/zenodo.5679629#">
   <label>The sch:schema/sch:p element is reported as a svrl:text element</label>
   <schemas>
-    <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    <schema><sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
       <sch:p>paragraph</sch:p>
       <sch:pattern>
         <sch:rule context="/">
           <sch:assert test="false()"/>
         </sch:rule>
       </sch:pattern>
-    </sch:schema>
+    </sch:schema></schema>
   </schemas>
   <documents>
     <document filename="document.xml">

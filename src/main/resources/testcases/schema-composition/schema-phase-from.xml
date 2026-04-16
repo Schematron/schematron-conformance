@@ -2,7 +2,7 @@
 <testcase expect="valid" xmlns="https://doi.org/10.5281/zenodo.5679629#">
   <label>A @from attribute on a phase element restricts the evaluation of patterns to the subset of the document it selects</label>
   <schemas>
-    <sch:schema defaultPhase="phase" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    <schema><sch:schema defaultPhase="phase" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
       <sch:phase id="phase" from="element">
         <sch:active pattern="pattern"/>
       </sch:phase>
@@ -11,7 +11,7 @@
           <sch:assert test="false()"/>
         </sch:rule>
       </sch:pattern>
-    </sch:schema>
+    </sch:schema></schema>
   </schemas>
   <documents>
     <document filename="document.xml">

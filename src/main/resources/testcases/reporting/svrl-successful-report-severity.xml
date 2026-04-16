@@ -2,13 +2,13 @@
 <testcase expect="invalid" xmlns="https://doi.org/10.5281/zenodo.5679629#">
   <label>The svrl:successful-report/@severity attribute contains the severity of the successful report</label>
   <schemas>
-    <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    <schema><sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
       <sch:pattern>
         <sch:rule context="/">
           <sch:report test="true()" severity="warning"/>
         </sch:rule>
       </sch:pattern>
-    </sch:schema>
+    </sch:schema></schema>
   </schemas>
   <documents>
     <document filename="document.xml">

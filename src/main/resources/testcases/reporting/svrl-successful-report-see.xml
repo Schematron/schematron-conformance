@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testcase expect="invalid" xmlns="https://doi.org/10.5281/zenodo.5679629#">
-  <label>The svrl:active-group/@id attribute contains the id of the active group</label>
+  <label>The svrl:successful-report/@see attribute contains the flag of the successful report</label>
   <schemas>
     <schema><sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-      <sch:group id="group">
+      <sch:pattern>
         <sch:rule context="/">
-          <sch:report test="true()"/>
+          <sch:report test="true()" flag="info"/>
         </sch:rule>
-      </sch:group>
+      </sch:pattern>
     </sch:schema></schema>
   </schemas>
   <documents>
@@ -16,6 +16,6 @@
     </document>
   </documents>
   <assertions xmlns:svrl="http://purl.oclc.org/dsdl/svrl">
-    <assertion assert="//svrl:active-group[@id = 'group']"/>
+    <assertion assert="//svrl:successful-report/@flag = 'info'"/>
   </assertions>
 </testcase>

@@ -2,7 +2,7 @@
 <testcase expect="valid" xmlns="https://doi.org/10.5281/zenodo.5679629#">
   <label xmlns:testcase="https://doi.org/10.5281/zenodo.5679629#">The order of rules in a pattern is significant</label>
   <schemas>
-    <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    <schema><sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
       <sch:pattern>
         <sch:rule context="root" id="should-fire-1">
           <sch:assert test="true()"/>
@@ -14,7 +14,7 @@
           <sch:assert test="false()"/>
         </sch:rule>
       </sch:pattern>
-    </sch:schema>
+    </sch:schema></schema>
   </schemas>
   <documents>
     <document filename="document.xml">

@@ -2,7 +2,7 @@
 <testcase expect="invalid" xmlns="https://doi.org/10.5281/zenodo.5679629#">
   <testcase:label xmlns:testcase="https://doi.org/10.5281/zenodo.5679629#">When an abstract group is instantiated, placeholders are replaced in the sch:rule @context attribute</testcase:label>
   <schemas>
-    <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    <schema><sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
       <sch:group abstract="true" id="abstract-group">
         <sch:rule context="$context">
           <sch:assert test="false()"/>
@@ -11,7 +11,7 @@
       <sch:group is-a="abstract-group">
         <sch:param name="context" value="element"/>
       </sch:group>
-    </sch:schema>
+    </sch:schema></schema>
   </schemas>
   <documents>
     <document filename="document.xml">

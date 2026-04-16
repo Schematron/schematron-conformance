@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testcase expect="invalid" xmlns="https://doi.org/10.5281/zenodo.5679629#" phase="phase-1">
+<testcase expect="invalid" phase="phase-1" xmlns="https://doi.org/10.5281/zenodo.5679629#">
   <label>A phase variable is scoped to the pattern</label>
   <schemas>
-    <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    <schema><sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
       <sch:phase id="phase-1">
         <sch:let name="variable" value="1"/>
         <sch:active pattern="pattern-1"/>
@@ -21,7 +21,7 @@
           <sch:report test="$variable = 2" id="report-2"/>
         </sch:rule>
       </sch:pattern>
-    </sch:schema>
+    </sch:schema></schema>
   </schemas>
   <documents>
     <document filename="document.xml">

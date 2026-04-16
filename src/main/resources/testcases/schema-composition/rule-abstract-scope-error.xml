@@ -2,7 +2,7 @@
 <testcase expect="error" xmlns="https://doi.org/10.5281/zenodo.5679629#">
   <label>It is an error to extend an abstract rule that is defined in a different pattern</label>
   <schemas>
-    <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    <schema><sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
       <sch:pattern>
         <sch:rule abstract="true" id="abstract-rule">
           <sch:report test="self::element"/>
@@ -13,7 +13,7 @@
           <sch:extends rule="abstract-rule"/>
         </sch:rule>
       </sch:pattern>
-    </sch:schema>
+    </sch:schema></schema>
   </schemas>
   <documents>
     <document filename="document.xml">

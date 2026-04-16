@@ -2,13 +2,13 @@
 <testcase expect="valid" xmlns="https://doi.org/10.5281/zenodo.5679629#">
   <label>The svrl:schematron-result/@schemaVersion attribute contains the value of the Schema's @schemaVersion attribute</label>
   <schemas>
-    <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" schemaVersion="1.0">
+    <schema><sch:schema schemaVersion="1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
       <sch:pattern>
         <sch:rule context="*">
           <sch:assert test="true()"/>
         </sch:rule>
       </sch:pattern>
-    </sch:schema>
+    </sch:schema></schema>
   </schemas>
   <documents>
     <document filename="document.xml">

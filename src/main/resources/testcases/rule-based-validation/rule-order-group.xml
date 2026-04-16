@@ -2,7 +2,7 @@
 <testcase expect="invalid" xmlns="https://doi.org/10.5281/zenodo.5679629#">
   <label>The order of rules in a group is insignificant</label>
   <schemas>
-    <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    <schema><sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
       <sch:group>
         <sch:rule context="root">
           <sch:assert test="true()"/>
@@ -11,7 +11,7 @@
           <sch:assert test="false()"/>
         </sch:rule>
       </sch:group>
-    </sch:schema>
+    </sch:schema></schema>
   </schemas>
   <documents>
     <document filename="document.xml">

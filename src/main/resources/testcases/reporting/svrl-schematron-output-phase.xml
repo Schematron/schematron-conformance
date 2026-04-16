@@ -2,7 +2,7 @@
 <testcase expect="valid" xmlns="https://doi.org/10.5281/zenodo.5679629#">
   <label>The svrl:schematron-result/@phase attribute contains the selected validation phase</label>
   <schemas>
-    <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" defaultPhase="phase-1">
+    <schema><sch:schema defaultPhase="phase-1" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
       <sch:phase id="phase-1">
         <sch:active pattern="pattern-1"/>
       </sch:phase>
@@ -11,7 +11,7 @@
           <sch:assert test="true()"/>
         </sch:rule>
       </sch:pattern>
-    </sch:schema>
+    </sch:schema></schema>
   </schemas>
   <documents>
     <document filename="document.xml">

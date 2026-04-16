@@ -26,6 +26,11 @@ label =
 
 schemas =
     element tc:schemas {
+        schema+
+    }
+
+schema =
+    element tc:schema {
         element sch:schema {
             attribute * { string }*,
             anyForeignSubtree+

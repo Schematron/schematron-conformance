@@ -2,7 +2,7 @@
 <testcase expect="valid" xmlns="https://doi.org/10.5281/zenodo.5679629#">
   <label>Schematron namespace declarations are reported in svrl:ns-prefix-in-attribute-value elements</label>
   <schemas>
-    <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" schemaVersion="1.0">
+    <schema><sch:schema schemaVersion="1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
       <sch:ns prefix="ex1" uri="https://example.com/ns1"/>
       <sch:ns prefix="ex2" uri="https://example.com/ns2"/>
       <sch:pattern>
@@ -10,7 +10,7 @@
           <sch:assert test="true()"/>
         </sch:rule>
       </sch:pattern>
-    </sch:schema>
+    </sch:schema></schema>
   </schemas>
   <documents>
     <document filename="document.xml">

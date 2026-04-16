@@ -2,7 +2,7 @@
 <testcase expect="invalid" xmlns="https://doi.org/10.5281/zenodo.5679629#">
   <testcase:label xmlns:testcase="https://doi.org/10.5281/zenodo.5679629#">The xsl:key element may use element content</testcase:label>
   <schemas>
-    <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    <schema><sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
       <xsl:key name="index" match="*" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
         <xsl:text>key</xsl:text>
       </xsl:key>
@@ -11,7 +11,7 @@
           <sch:report test="count(key('index', 'key')) = 1"/>
         </sch:rule>
       </sch:pattern>
-    </sch:schema>
+    </sch:schema></schema>
   </schemas>
   <documents>
     <document filename="document.xml">
