@@ -31,10 +31,12 @@ schemas =
 
 schema =
     element tc:schema {
-        element sch:schema {
-            attribute * { string }*,
-            anyForeignSubtree+
-        }
+        (
+            element sch:schema {
+                attribute * { string }*,
+                anyForeignSubtree+
+            }
+        ) | attribute href { xsd:anyURI }
     }
 
 documents =
@@ -44,8 +46,10 @@ documents =
 
 document =
     element tc:document {
-        attribute filename { xsd:anyURI },
-        anyForeignSubtree
+        (
+            attribute filename { xsd:anyURI },
+            anyForeignSubtree
+        ) | attribute href { xsd:anyURI }
     }
 
 assertions =
