@@ -1,0 +1,59 @@
+# RELAX NG Grammar of Schematron Testcase Specifications
+#
+# Copyright (c) by David Maus <dmaus@dmaus.name>
+#
+
+namespace tc = "https://doi.org/10.5281/zenodo.5679629#"
+namespace sch = "http://purl.oclc.org/dsdl/schematron"
+
+start =
+    testcase
+
+testcase =
+    element tc:testcase {
+        attribute phase { xsd:token }?,
+        attribute expect { "error" | "invalid" | "valid" },
+        label,
+        schemas,
+        documents,
+        assertions?
+    }
+
+label =
+    element tc:label {
+        text
+    }
+
+schemas =
+    element tc:schemas {
+        element sch:schema {
+            attribute * { string }*,
+            anyForeignSubtree+
+        }
+    }
+
+documents =
+    element tc:documents {
+        document+
+    }
+
+document =
+    element tc:document {
+        attribute filename { xsd:anyURI },
+        anyForeignSubtree
+    }
+
+assertions =
+    element tc:assertions {
+        assertion*
+    }
+
+assertion =
+    element tc:assertion {
+        attribute assert { string }
+    }
+
+anyForeignSubtree =
+    element * - tc:* {
+      ( attribute * { string } | text | anyForeignSubtree )*
+    }

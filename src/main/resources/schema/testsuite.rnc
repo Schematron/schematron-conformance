@@ -1,0 +1,31 @@
+# RELAX NG Grammar of Schematron Testsuite Specifications
+#
+# Copyright (c) by David Maus <dmaus@dmaus.name>
+#
+
+namespace tc = "https://doi.org/10.5281/zenodo.5679629#"
+
+start =
+    testsuite
+
+testsuite =
+    element tc:testsuite {
+        label?,
+        \include*,
+        testcase*
+    }
+
+label =
+    element tc:label {
+        text
+    }
+
+\include =
+    element tc:include {
+        attribute href { xsd:anyURI }
+    }
+
+testcase =
+    element tc:testcase {
+        attribute href { xsd:anyURI }
+    }
