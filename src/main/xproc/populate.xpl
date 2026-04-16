@@ -8,6 +8,28 @@
   <p:input  port="source"/>
   <p:output port="result"/>
 
+  <p:option name="basedir" as="xs:anyURI" required="true"/>
+  <p:option name="queryBinding" as="xs:string" required="true"/>
+
+  <p:declare-step type="cnf:perform-include">
+    <p:documentation>Recursively include testsuite specifications</p:documentation>
+
+    <p:input  port="source"/>
+    <p:output port="result"/>
+
+    <p:viewport match="cnf:testsuite/cnf:include">
+      <p:variable name="href" as="xs:anyURI" select="resolve-uri(cnf:include/@href, base-uri(cnf:include))"/>
+      <p:load href="{$href}"/>
+      <p:delete match="cnf:label"/>
+      <p:unwrap match="cnf:testsuite"/>
+      <p:viewport match="cnf:testcase">
+        <p:add-attribute attribute-name="href" attribute-value="{resolve-uri(cnf:testcase/@href, base-uri(cnf:testcase))}"/>
+      </p:viewport>
+      <cnf:perform-include/>
+    </p:viewport>
+
+  </p:declare-step>
+
   <p:declare-step type="cnf:populate-testcase">
     <p:documentation>Populate testcase file to filesystem</p:documentation>
 
@@ -57,10 +79,32 @@
       <p:delete match="cnf:document/node()"/>
     </p:viewport>
 
-    <p:identity/>
+  </p:declare-step>
+
+  <p:declare-step type="cnf:populate-testsuite">
+    <p:documentation>Populate testsuite to filesystem</p:documentation>
+
+    <p:input  port="source"/>
+    <p:output port="result"/>
+
+    <p:option name="basedir" as="xs:anyURI" required="true"/>
+    <p:option name="queryBinding" as="xs:string" required="true"/>
+
+    <cnf:perform-include/>
+
+    <p:viewport match="cnf:testcase" name="populate-testcases">
+      <p:add-attribute match="cnf:testcase" attribute-name="uuid" attribute-value="#uuid#"/>
+      <p:uuid match="cnf:testcase/@uuid"/>
+      <p:variable name="subdir" as="xs:string" select="cnf:testcase/@uuid"/>
+      <p:identity name="before-load"/>
+      <p:load href="{resolve-uri(cnf:testcase/@href, base-uri(cnf:testcase))}"/>
+      <cnf:populate-testcase basedir="{$basedir}/{$subdir}/" queryBinding="{$queryBinding}"/>
+    </p:viewport>
+
+    <p:store href="{resolve-uri('testsuite.xml', $basedir)}"/>
 
   </p:declare-step>
 
-  <cnf:populate-testcase basedir="{p:urify('/tmp/fooo/')}" queryBinding="xslt3"/>
+  <cnf:populate-testsuite basedir="{if (ends-with($basedir, '/')) then p:urify($basedir) else p:urify(concat($basedir, '/'))}" queryBinding="{$queryBinding}"/>
 
 </p:declare-step>
