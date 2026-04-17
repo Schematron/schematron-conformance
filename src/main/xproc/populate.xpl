@@ -6,7 +6,6 @@
                 xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
   <p:input  port="source"/>
-  <p:output port="result"/>
 
   <p:option name="basedir" as="xs:anyURI" required="true"/>
   <p:option name="queryBinding" as="xs:string" required="true"/>
@@ -108,6 +107,7 @@
       <p:delete match="cnf:testcase/@uuid"/>
     </p:viewport>
 
+    <p:delete match="text()[normalize-space() eq '']"/>
     <p:store href="{resolve-uri('testsuite.xml', $basedir)}"/>
 
   </p:declare-step>
