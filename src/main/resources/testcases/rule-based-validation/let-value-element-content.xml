@@ -13,7 +13,7 @@
         </sch:rule>
       </sch:pattern>
     </sch:schema></schema>
-    <schema><sch:schema queryBinding="xslt" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    <schema queryBindings="xslt"><sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
       <sch:ns prefix="xsl" uri="http://www.w3.org/1999/XSL/Transform"/>
       <sch:let name="foobar">
         <message terminate="yes" xmlns="http://www.w3.org/1999/XSL/Transform">This should NOT terminate the program</message>ß
