@@ -40,9 +40,9 @@
 
     <!-- Serialize schema and replace content with content reference -->
     <p:variable name="no-explicit-schema" as="xs:boolean"
-                select="not(cnf:testcase/cnf:schemas/cnf:schema[sch:schema/@queryBinding = $queryBinding])"/>
+                select="not(cnf:testcase/cnf:schemas/cnf:schema[$queryBinding = tokenize(@queryBindings)])"/>
     <p:viewport match="cnf:schema" name="serialize-schema">
-      <p:if test="(not(cnf:schema/sch:schema/@queryBinding) and $no-explicit-schema) or (cnf:schema/sch:schema/@queryBinding = $queryBinding)">
+      <p:if test="(not(cnf:schema/@queryBindings) and $no-explicit-schema) or (cnf:schema[$queryBinding = tokenize(@queryBindings)])">
         <p:add-attribute match="cnf:schema" attribute-name="uuid" attribute-value="#uuid#"/>
         <p:uuid match="cnf:schema/@uuid"/>
         <p:add-attribute match="cnf:schema/sch:schema" attribute-name="queryBinding" attribute-value="{$queryBinding}"/>
@@ -90,6 +90,7 @@
     <cnf:perform-include/>
 
     <p:viewport match="cnf:testcase" name="populate-testcases">
+      <p:output port="result" sequence="true"/>
       <p:add-attribute match="cnf:testcase" attribute-name="uuid" attribute-value="#uuid#"/>
       <p:uuid match="cnf:testcase/@uuid"/>
       <p:variable name="name" as="xs:string" select="tokenize(cnf:testcase/@href, '/')[last()]"/>
@@ -97,12 +98,19 @@
       <p:variable name="subdir" as="xs:string" select="cnf:testcase/@uuid"/>
       <p:identity name="before-load"/>
       <p:load href="{resolve-uri(cnf:testcase/@href, base-uri(cnf:testcase))}"/>
-      <cnf:populate-testcase basedir="{$basedir}/{$category}/{$subdir}/" queryBinding="{$queryBinding}"/>
-      <p:store href="{$basedir}/{$category}/{$name}"/>
-      <p:add-attribute attribute-name="href" attribute-value="{$category}/{$name}">
-        <p:with-input pipe="result@before-load"/>
-      </p:add-attribute>
-      <p:delete match="cnf:testcase/@uuid"/>
+      <p:choose>
+        <p:when test="cnf:testcase/cnf:schemas/cnf:schema[not(@queryBindings) or ($queryBinding = tokenize(@queryBindings))]">
+          <cnf:populate-testcase basedir="{$basedir}/{$category}/{$subdir}/" queryBinding="{$queryBinding}"/>
+          <p:store href="{$basedir}/{$category}/{$name}"/>
+          <p:add-attribute attribute-name="href" attribute-value="{$category}/{$name}">
+            <p:with-input pipe="result@before-load"/>
+          </p:add-attribute>
+          <p:delete match="cnf:testcase/@uuid"/>
+        </p:when>
+        <p:otherwise>
+          <p:delete match="cnf:testcase"/>
+        </p:otherwise>
+      </p:choose>
     </p:viewport>
 
     <p:delete match="text()[normalize-space() eq '']"/>
