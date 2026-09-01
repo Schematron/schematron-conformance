@@ -38,8 +38,6 @@
     <p:option name="basedir" as="xs:anyURI" required="true"/>
     <p:option name="queryBinding" as="xs:string" required="true"/>
 
-    <p:variable name="subdir" as="xs:anyURI" select="tokenize($basedir, '/')[last() - 1]"/>
-
     <!-- Serialize schema and replace content with content reference -->
     <p:variable name="no-explicit-schema" as="xs:boolean"
                 select="not(cnf:testcase/cnf:schemas/cnf:schema[sch:schema/@queryBinding = $queryBinding])"/>
@@ -50,7 +48,7 @@
         <p:add-attribute match="cnf:schema/sch:schema" attribute-name="queryBinding" attribute-value="{$queryBinding}"/>
         <p:variable name="filename" as="xs:string" select="concat(cnf:schema/@uuid, '.sch')"/>
         <p:variable name="href" as="xs:anyURI" select="resolve-uri($filename, $basedir)"/>
-        <p:add-attribute attribute-name="href" attribute-value="{$subdir}/{$filename}"/>
+        <p:add-attribute attribute-name="href" attribute-value="{tokenize($basedir, '/')[last() - 1]}/{$filename}"/>
         <p:identity name="before-store"/>
         <p:store href="{$href}">
           <p:with-input select="cnf:schema/sch:schema"/>
@@ -71,7 +69,7 @@
       <p:store href="{$href}">
         <p:with-input select="cnf:document/*[1]"/>
       </p:store>
-      <p:add-attribute attribute-name="href" attribute-value="{$subdir}/{$filename}">
+      <p:add-attribute attribute-name="href" attribute-value="{tokenize($basedir, '/')[last() - 1]}/{$filename}">
         <p:with-input pipe="current@serialize-documents"/>
       </p:add-attribute>
       <p:delete match="cnf:document/@filename"/>
