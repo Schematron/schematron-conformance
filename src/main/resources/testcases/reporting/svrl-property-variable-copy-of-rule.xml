@@ -2,7 +2,7 @@
 <testcase expect="invalid" xmlns="https://doi.org/10.5281/zenodo.5679629#">
   <testcase:label xmlns:testcase="https://doi.org/10.5281/zenodo.5679629#">A xsl:copy-of inside a sch:property can use a rule-scoped variable</testcase:label>
   <schemas>
-    <schema><sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    <schema queryBindings="xslt xslt2 xslt3"><sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
       <sch:pattern>
         <sch:rule context="*">
           <sch:let name="variable" value="'attribute'"/>
