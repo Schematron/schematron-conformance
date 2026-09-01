@@ -16,13 +16,13 @@
       </sch:library>
     </document>
     <document filename="library-2.sch">
-      <schema><sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+      <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
         <sch:pattern>
           <sch:rule context="/">
             <sch:assert test="false()"/>
           </sch:rule>
         </sch:pattern>
-      </sch:schema></schema>
+      </sch:schema>
     </document>
   </documents>
 </testcase>

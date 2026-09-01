@@ -4,7 +4,7 @@
   <schemas>
     <schema><sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
       <sch:pattern>
-        <sch:rule context="text()">
+        <sch:rule context="/root/text()">
           <sch:report test=". = 'text node'"/>
         </sch:rule>
       </sch:pattern>
@@ -12,7 +12,7 @@
   </schemas>
   <documents>
     <document filename="document.xml">
-      <root>text node</root>
+      <root xmlns="">text node</root>
     </document>
   </documents>
 </testcase>

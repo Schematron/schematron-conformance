@@ -4,7 +4,7 @@
   <schemas>
     <schema><sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
       <sch:pattern>
-        <sch:rule context="root">
+        <sch:rule context="/root">
           <sch:report test="local-name() = 'root'"/>
         </sch:rule>
       </sch:pattern>

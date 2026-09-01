@@ -5,7 +5,7 @@
     <schema><sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
       <sch:let name="variable" value="'root'"/>
       <sch:pattern>
-        <sch:rule context="*[local-name() = $variable]">
+        <sch:rule context="/*[local-name() = $variable]">
           <sch:report test="true()"/>
         </sch:rule>
       </sch:pattern>

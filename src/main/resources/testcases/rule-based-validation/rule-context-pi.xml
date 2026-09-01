@@ -4,7 +4,7 @@
   <schemas>
     <schema><sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
       <sch:pattern>
-        <sch:rule context="processing-instruction()">
+        <sch:rule context="/root/processing-instruction()">
           <sch:report test="name(.) = 'pi'"/>
         </sch:rule>
       </sch:pattern>
@@ -12,7 +12,7 @@
   </schemas>
   <documents>
     <document filename="document.xml">
-      <root>
+      <root xmlns="">
         <?pi foobar ?>
       </root>
     </document>

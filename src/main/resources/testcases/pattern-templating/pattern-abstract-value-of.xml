@@ -21,6 +21,6 @@
     </document>
   </documents>
   <assertions xmlns:svrl="http://purl.oclc.org/dsdl/svrl">
-    <assertion assert="//svrl:failed-assert/svrl:text = 'foobar'"/>
+    <assertion assert="normalize-space(//svrl:failed-assert/svrl:text) = 'foobar'"/>
   </assertions>
 </testcase>

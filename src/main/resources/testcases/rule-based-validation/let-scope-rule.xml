@@ -4,11 +4,11 @@
   <schemas>
     <schema><sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
       <sch:pattern>
-        <sch:rule context="root">
+        <sch:rule context="/root">
           <sch:let name="variable" value="1"/>
           <sch:report test="$variable = 1" id="report-1"/>
         </sch:rule>
-        <sch:rule context="child">
+        <sch:rule context="/root/child">
           <sch:let name="variable" value="2"/>
           <sch:report test="$variable = 2" id="report-2"/>
         </sch:rule>

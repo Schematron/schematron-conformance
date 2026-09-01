@@ -4,7 +4,7 @@
   <schemas>
     <schema><sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
       <sch:pattern>
-        <sch:rule context="comment()">
+        <sch:rule context="/root/comment()">
           <sch:report test="true()"/>
           <sch:report test=". = '&lt;!-- Comment --&gt;'"/>
         </sch:rule>
@@ -13,7 +13,7 @@
   </schemas>
   <documents>
     <document filename="document.xml">
-      <root><!-- Comment --></root>
+      <root xmlns=""><!-- Comment --></root>
     </document>
   </documents>
 </testcase>

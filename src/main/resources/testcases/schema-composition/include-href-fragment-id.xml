@@ -15,13 +15,13 @@
       <element xmlns=""/>
     </document>
     <document filename="include.sch">
-      <schema><sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+      <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
         <sch:pattern>
           <sch:rule abstract="true">
             <sch:assert id="assert" test="false()"/>
           </sch:rule>
         </sch:pattern>
-      </sch:schema></schema>
+      </sch:schema>
     </document>
   </documents>
 </testcase>

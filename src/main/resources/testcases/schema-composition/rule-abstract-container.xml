@@ -9,7 +9,7 @@
         </sch:rule>
       </sch:rules>
       <sch:pattern>
-        <sch:rule context="element">
+        <sch:rule context="/element">
           <sch:extends rule="abstract-rule"/>
         </sch:rule>
       </sch:pattern>

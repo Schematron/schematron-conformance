@@ -11,7 +11,7 @@
           <sch:extends rule="abstract-rule-1"/>
           <sch:assert test="true()"/>
         </sch:rule>
-        <sch:rule context="element">
+        <sch:rule context="/element">
           <sch:extends rule="abstract-rule-2"/>
         </sch:rule>
       </sch:pattern>

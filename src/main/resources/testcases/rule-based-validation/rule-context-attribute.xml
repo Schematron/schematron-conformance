@@ -4,7 +4,7 @@
   <schemas>
     <schema><sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
       <sch:pattern>
-        <sch:rule context="@attr">
+        <sch:rule context="/root/@attr">
           <sch:report test=". = 'value'"/>
         </sch:rule>
       </sch:pattern>

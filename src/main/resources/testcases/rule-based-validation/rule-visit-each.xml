@@ -4,7 +4,7 @@
   <schemas>
     <schema><sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
       <sch:pattern>
-        <sch:rule context="@attr" visit-each="tokenize(.)">
+        <sch:rule context="/root/@attr" visit-each="tokenize(.)">
           <sch:report test=". = 'value-3'"/>
         </sch:rule>
       </sch:pattern>
@@ -12,7 +12,7 @@
   </schemas>
   <documents>
     <document filename="document.xml">
-      <root attr="value-1 value-2 value-3"/>
+      <root xmlns="" attr="value-1 value-2 value-3"/>
     </document>
   </documents>
 </testcase>

@@ -8,7 +8,7 @@
         <sch:active pattern="pattern"/>
       </sch:phase>
       <sch:pattern id="pattern">
-        <sch:rule context="*[local-name() = $variable]">
+        <sch:rule context="/*[local-name() = $variable]">
           <sch:report test="true()"/>
         </sch:rule>
       </sch:pattern>

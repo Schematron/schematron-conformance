@@ -5,13 +5,13 @@
     <schema><sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron">
       <sch:pattern>
         <sch:let name="variable" value="1"/>
-        <sch:rule context="root">
+        <sch:rule context="/root">
           <sch:report test="$variable = 1" id="report-1"/>
         </sch:rule>
       </sch:pattern>
       <sch:pattern>
         <sch:let name="variable" value="2"/>
-        <sch:rule context="child">
+        <sch:rule context="/root/child">
           <sch:report test="$variable = 2" id="report-2"/>
         </sch:rule>
       </sch:pattern>
